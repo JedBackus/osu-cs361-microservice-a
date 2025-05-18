@@ -25,4 +25,7 @@ while True:
         wpm = str(round(wpm, 2))
 
         socket.send_string(wpm)
+    else:
+        socket.send_string("Please pass 'start' to initiate the WPM calculator...")
+
 
