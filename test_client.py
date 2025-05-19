@@ -2,7 +2,7 @@ import zmq
 
 context =zmq.Context()
 
-print("Connecting to hello world server...")
+print("Connecting to WPM Calc server...")
 socket = context.socket(zmq.REQ)
 socket.connect("tcp://localhost:5678")
 

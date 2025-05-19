@@ -7,6 +7,7 @@ socket.bind("tcp://*:5678")
 
 while True:
 
+    print("WPM Calculator running, awaiting 'start' message...")
     message = socket.recv()
     if message.decode() == 'start':
         socket.send_string("wpm calc started..")
@@ -23,6 +24,8 @@ while True:
         time_taken = (end - start) / 60
         wpm = words / time_taken
         wpm = str(round(wpm, 2))
+
+        print(f"Sending calculated WPM to client: {wpm}.")
 
         socket.send_string(wpm)
     else:
